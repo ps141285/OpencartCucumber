@@ -3,10 +3,7 @@ package StepDefinition;
 import PageObject.*;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.Objects;
 
 public class StepDefinition extends BaseClass
 {
@@ -24,10 +21,10 @@ public class StepDefinition extends BaseClass
     }
 
     @When("User opens url {string}")
-    public void userOpensUrl(String url) throws InterruptedException {
+    public void userOpensUrl(String url) throws InterruptedException
+    {
         driver.get(url);
         driver.manage().window().maximize();
-        Thread.sleep(3000);
     }
 
     @Then("navigate to login page")
@@ -69,12 +66,13 @@ public class StepDefinition extends BaseClass
     @When("User click on Logout Link")
     public void logout() throws InterruptedException {
         lo.click_logout();
-        Thread.sleep(3000);
+
     }
 
     @Then("Page title should be {string}")
     public void page_title_should_be(String Page_title)
     {
+
         String title=driver.getTitle();
         if(Page_title.equals(title))
         {
@@ -88,13 +86,12 @@ public class StepDefinition extends BaseClass
     }
     @Then("click on continue button")
     public void click_on_continue_button() throws InterruptedException {
-        Thread.sleep(3000);
         alp.Click_continue();
     }
 
     @Then("Close the browser")
     public void TearDown() throws InterruptedException {
-        Thread.sleep(3000);
+
         driver.quit();
     }
 

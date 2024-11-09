@@ -1,6 +1,7 @@
 package StepDefinition;
 
 import PageObject.*;
+import Utilities.WaitHelper;
 import net.bytebuddy.utility.RandomString;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ public class BaseClass
     AccounLogoutPage alp;
     RegisterPage rp;
     AccountCreationPage acp;
+
 
     //created random string
     public static String PWD=RandomAlphaNumeric();

@@ -3,7 +3,6 @@ package PageObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends BasePage
 {
@@ -15,17 +14,18 @@ public class HomePage extends BasePage
     //Finding X path
 
     @FindBy(xpath="//span[normalize-space()=\"My Account\"]")
-        WebElement MyAcc_link;
+     public WebElement MyAcc_link;
 
     @FindBy(xpath="//a[normalize-space()=\"Login\"]")
-    WebElement Login_link;
+    public WebElement Login_link;
 
     @FindBy(xpath="//a[normalize-space()='Register']")
-    WebElement Register_link;
+    public WebElement Register_link;
 
     //Action Method
     public void click_MyAcc()
     {
+        wait.waitForElement(MyAcc_link,20);
         MyAcc_link.click();
     }
     public void click_login()
